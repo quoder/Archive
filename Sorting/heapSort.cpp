@@ -57,17 +57,19 @@ void heapSort(int *A)
 int main()
 {
 
-	int A[10];
-	printf("Enter the elements in the array, size is 10\n");
-	for(int i=0;i<10;i++)
+	printf("Enter the number of elements in the array\n");
+	int N;
+	scanf("%d",&N);
+	arrayLength=N;
+	heapSize=arrayLength;
+	int A[N];
+	for(int i=0;i<N;i++)
 		scanf("%d",&A[i]);
-	heapSize=floor(sizeof(A)/sizeof(A[0]));
-	arrayLength=heapSize;
-	printf("The size of the entered array is: %d",heapSize);
+	printf("The size of the entered array is: %d",arrayLength);
 	printf("\n");
 	printf("The sorted array is\n");
 	heapSort(A);
-	for(int i=0;i<10;i++)
+	for(int i=0;i<arrayLength;i++)
 		printf("%d ",A[i]);
 	return 0;
 }
